@@ -1,0 +1,96 @@
+/* ==========================================================================
+   CSS DA ASSINATURA JKLSOLUTIONS EM SITES DE CLIENTES
+   Compatível com: Temas Claros (Branco) e Temas Escuros (Preto/Dourado/Luxo)
+   ========================================================================== */
+
+.credito-jkl {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: inherit;
+  opacity: 0.55;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease, color 0.3s ease;
+  vertical-align: middle;
+}
+
+.credito-jkl:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* SVG do logo anatômico */
+.credito-jkl .jkl-logo-svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.credito-jkl:hover .jkl-logo-svg {
+  transform: scale(1.1);
+}
+
+/* Transições suaves dos traços */
+.credito-jkl .jkl-part-j,
+.credito-jkl .jkl-part-k-stem,
+.credito-jkl .jkl-part-k-arm,
+.credito-jkl .jkl-part-l-fuse,
+.credito-jkl .jkl-part-dot,
+.credito-jkl .jkl-sol {
+  transition: all 0.3s ease;
+}
+
+/* -------------------------------------------------------------
+   1. PARA SITES ESCUROS / LUXO (Ex: TGO Filmes - Noivas/Dourado)
+   ------------------------------------------------------------- */
+body.tema-escuro .credito-jkl,
+footer.dark .credito-jkl,
+.footer-dark .credito-jkl,
+[data-theme="dark"] .credito-jkl {
+  color: #a89f91;
+}
+
+/* Em repouso (Luxo): Tons acetinados */
+body.tema-escuro .credito-jkl .jkl-part-j { stroke: #d4af37; opacity: 0.7; }
+body.tema-escuro .credito-jkl .jkl-part-k-stem { stroke: #e5d5be; opacity: 0.9; }
+body.tema-escuro .credito-jkl .jkl-part-k-arm { stroke: #d4af37; opacity: 0.8; }
+body.tema-escuro .credito-jkl .jkl-part-l-fuse { stroke: #ff9d42; opacity: 0.9; }
+body.tema-escuro .credito-jkl .jkl-part-dot { fill: #ff9d42; opacity: 0.85; }
+
+/* No Hover (:hover Luxo): Acende no branco luminoso + Laranja/Dourado */
+body.tema-escuro .credito-jkl:hover { color: #fcecd7; }
+body.tema-escuro .credito-jkl:hover .jkl-part-j { stroke: #ffffff; opacity: 1; }
+body.tema-escuro .credito-jkl:hover .jkl-part-k-stem { stroke: #ffffff; opacity: 1; }
+body.tema-escuro .credito-jkl:hover .jkl-part-k-arm { stroke: #ff7a00; opacity: 1; }
+body.tema-escuro .credito-jkl:hover .jkl-part-l-fuse { stroke: #ff7a00; opacity: 1; }
+body.tema-escuro .credito-jkl:hover .jkl-part-dot { fill: #ff7a00; opacity: 1; }
+body.tema-escuro .credito-jkl:hover .jkl-sol { color: #ff7a00; }
+
+/* -------------------------------------------------------------
+   2. PARA SITES CLAROS / BRANCOS
+   ------------------------------------------------------------- */
+body.tema-claro .credito-jkl,
+footer.light .credito-jkl,
+.footer-light .credito-jkl,
+[data-theme="light"] .credito-jkl,
+.footer-white .credito-jkl {
+  color: #4b5563;
+}
+
+/* Em repouso (Claro) */
+body.tema-claro .credito-jkl .jkl-part-j { stroke: #0b2545; opacity: 0.7; }
+body.tema-claro .credito-jkl .jkl-part-k-stem { stroke: #0b2545; opacity: 0.8; }
+body.tema-claro .credito-jkl .jkl-part-k-arm { stroke: #ff7a00; opacity: 0.7; }
+body.tema-claro .credito-jkl .jkl-part-l-fuse { stroke: #ff7a00; opacity: 0.85; }
+body.tema-claro .credito-jkl .jkl-part-dot { fill: #ff7a00; opacity: 0.85; }
+
+/* No Hover (:hover Claro) */
+body.tema-claro .credito-jkl:hover { color: #111827; }
+body.tema-claro .credito-jkl:hover .jkl-part-j { stroke: #0b2545; opacity: 1; }
+body.tema-claro .credito-jkl:hover .jkl-part-k-stem { stroke: #0b2545; opacity: 1; }
+body.tema-claro .credito-jkl:hover .jkl-part-k-arm { stroke: #ff7a00; opacity: 1; }
+body.tema-claro .credito-jkl:hover .jkl-part-l-fuse { stroke: #ff7a00; opacity: 1; }
+body.tema-claro .credito-jkl:hover .jkl-part-dot { fill: #ff7a00; opacity: 1; }
+body.tema-claro .credito-jkl:hover .jkl-sol { color: #ff7a00; }

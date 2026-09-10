@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procedimento Padrão — Publicar Site de Teste na Cloudflare | JKL Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen">
+
+  <!-- HEADER -->
+  <header class="bg-slate-900 text-white py-8 px-6 border-b border-slate-800 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-600 flex items-center justify-center text-slate-950 font-black text-2xl shadow-md">
+          JKL
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight">Manual Operacional de Deploy</h1>
+          <p class="text-xs sm:text-sm text-slate-400">Criar site para teste do cliente na Cloudflare (Perfil jkl.automacao@gmail.com): na página jklsolutions.com.br</p>
+        </div>
+      </div>
+      <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold px-3 py-1.5 rounded-full">
+        POP Oficial • JKL Solutions
+      </span>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+    <!-- INTRODUÇÃO -->
+    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+      <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+        <i class="fa-solid fa-bullseye text-amber-600"></i> Objetivo do Procedimento
+      </h2>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Este manual orienta o passo a passo definitivo para publicar qualquer novo site institucional de cliente em ambiente de <strong>homologação/teste</strong> da JKL Solutions (ex: <code class="bg-slate-100 px-2 py-0.5 rounded text-amber-700 font-semibold font-mono">nomedocliente.jklsolutions.com.br</code>), utilizando o repositório GitHub e a infraestrutura gratuita de alta performance da <strong>Cloudflare</strong>.
+      </p>
+    </div>
+
+    <!-- PASSO 1: REPOSITÓRIO GITHUB -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center">1</span>
+        <h3 class="text-lg font-extrabold text-slate-900">Preparação dos Arquivos Locais & Subida no GitHub</h3>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Antes de abrir a Cloudflare, a estrutura do site do cliente é versionada e enviada para a conta GitHub oficial <code class="font-mono bg-slate-100 px-2 py-0.5 rounded font-bold text-slate-800">Jucelino11</code>.
+      </p>
+      <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono overflow-x-auto space-y-1">
+        <p class="text-slate-400"># Na pasta do projeto:</p>
+        <p>git init</p>
+        <p>git add .</p>
+        <p>git commit -m "feat: landing page cliente"</p>
+        <p>gh repo create oliveira-centro-veterinario --public --source=. --remote=origin --push</p>
+      </div>
+    </section>
+
+    <!-- PASSO 2: O CAMINHO CORRETO NO CLOUDFLARE -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center">2</span>
+        <h3 class="text-lg font-extrabold text-slate-900">Acesso ao Painel e Caminho Correto do "Workers & Pages"</h3>
+      </div>
+      <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl text-xs sm:text-sm text-amber-900 space-y-1">
+        <p class="font-bold flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation text-amber-600"></i> Atenção ao Caminho Atualizado da Cloudflare:</p>
+        <p>Se você estiver dentro da tela de um domínio individual, o menu <strong>Workers & Pages</strong> não aparece na barra lateral. Você deve voltar para o menu geral da conta.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-2">
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">Se estiver na tela do domínio:</span>
+          <p class="text-xs text-slate-600">Clique em <strong>"Back to Domains"</strong> no topo esquerdo para voltar ao nível geral da conta.</p>
+          <img src="passo-2-tela-dominio.png" alt="Tela do domínio" class="rounded-xl border border-slate-200 shadow-md w-full">
+        </div>
+        <div class="space-y-2">
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">No menu lateral principal:</span>
+          <p class="text-xs text-slate-600">Procure o bloco <strong>Build</strong> ➔ clique em <strong>Compute</strong> ➔ <strong>Workers & Pages</strong>.</p>
+          <img src="passo-3-menu-principal.png" alt="Menu principal Cloudflare" class="rounded-xl border border-slate-200 shadow-md w-full">
+        </div>
+      </div>
+    </section>
+
+    <!-- PASSO 3: TELA DO WORKERS & PAGES -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center">3</span>
+        <h3 class="text-lg font-extrabold text-slate-900">Criar Nova Aplicação (Sem Apagar Nada Antigo!)</h3>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Na tela de <strong>Workers & Pages</strong>, cada cliente tem o seu próprio projeto independente. <strong>Nunca apague nem renomeie projetos anteriores</strong> (como o <code>bortolucci-barbearia</code>), pois eles estão servindo os sites em produção.
+      </p>
+      <div class="space-y-3">
+        <p class="text-xs sm:text-sm font-semibold text-slate-700">Clique no botão azul no canto superior direito: <strong>"Create application"</strong>.</p>
+        <img src="passo-4-workers-and-pages.png" alt="Tela Workers & Pages" class="rounded-xl border border-slate-200 shadow-md w-full max-w-3xl mx-auto">
+      </div>
+    </section>
+
+    <!-- PASSO 4: CONECTAR COM GITHUB -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center">4</span>
+        <h3 class="text-lg font-extrabold text-slate-900">Selecionar Método de Deploy (GitHub)</h3>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Na tela <em>"Make something new"</em>, o seu GitHub já estará conectado (com o pontinho verde ✅). Basta clicar na primeira opção: <strong>"Continue with GitHub"</strong>.
+      </p>
+      <img src="passo-5-create-app-github.png" alt="Continue with GitHub" class="rounded-xl border border-slate-200 shadow-md w-full max-w-2xl mx-auto">
+    </section>
+
+    <!-- PASSO 5: SELECIONAR O REPOSITÓRIO -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center">5</span>
+        <h3 class="text-lg font-extrabold text-slate-900">Selecionar o Repositório do Cliente</h3>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Na tela <em>"Select a repository"</em>, procure pelo repositório do cliente recém-criado (ex: <code>oliveira-centro-veterinario</code>).
+      </p>
+      <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl text-xs sm:text-sm text-blue-900 space-y-2">
+        <p class="font-bold"><i class="fa-solid fa-circle-info"></i> O que fazer se o repositório não aparecer na listinha de imediato?</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Opção A:</strong> Digite o nome do projeto (ex: <code>oliveira</code>) no campo <strong>"Search repositories..."</strong>;</li>
+          <li><strong>Opção B:</strong> Clique no dropdown <strong>Jucelino11</strong> para selecionar o novo repositório e autorizar a Cloudflare;</li>
+          <li><strong>Opção C:</strong> Clique no link logo abaixo <strong>"Clone a public repository via Git URL >"</strong> e cole o link: <code class="font-mono font-bold">https://github.com/Jucelino11/oliveira-centro-veterinario</code>.</li>
+        </ul>
+      </div>
+      <img src="passo-6-select-repository.png" alt="Select repository" class="rounded-xl border border-slate-200 shadow-md w-full max-w-2xl mx-auto">
+    </section>
+
+    <!-- PASSO 6: CONFIGURAÇÃO DO WORKER -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-xl bg-slate-900 text-white font-black text-sm flex items-center justify-center">6</span>
+        <h3 class="text-lg font-extrabold text-slate-900">Configuração dos Comandos (Set up your application)</h3>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Na tela de configuração, os dados já vêm pré-configurados pelo repositório:
+      </p>
+      <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-600 space-y-1">
+        <li><strong>Project name:</strong> nome do projeto (ex: <code>oliveira-centro-veterinario</code>);</li>
+        <li><strong>Build command:</strong> em branco / opcional (pois é HTML estático, não precisa de compilação);</li>
+        <li><strong>Deploy command:</strong> <code>npx wrangler deploy</code>;</li>
+      </ul>
+      <p class="text-xs sm:text-sm font-semibold text-slate-700">Basta clicar no botão azul no canto inferior direito: <strong>"Deploy"</strong>.</p>
+      <img src="passo-7-set-up-application.png" alt="Set up application" class="rounded-xl border border-slate-200 shadow-md w-full max-w-2xl mx-auto">
+    </section>
+
+    <!-- PASSO 7: CONCLUSÃO E ATIVAÇÃO DO SUBDOMÍNIO -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl border border-emerald-300 shadow-sm space-y-6 bg-emerald-50/20">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-xl bg-emerald-600 text-white font-black text-sm flex items-center justify-center"><i class="fa-solid fa-check"></i></span>
+        <h3 class="text-lg font-extrabold text-slate-900">Sucesso! Subdomínio da JKL Ativo Automaticamente</h3>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Como o arquivo <code>wrangler.toml</code> já continha a rota configurada, a Cloudflare publica o site e vincula o <strong>Custom Domain</strong> da JKL Solutions em segundos, com certificado SSL gratuito automático:
+      </p>
+      <div class="bg-emerald-900 text-emerald-100 p-4 rounded-xl text-xs sm:text-sm font-mono flex items-center justify-between">
+        <span>https://veterinaria.jklsolutions.com.br</span>
+        <span class="text-emerald-400 font-bold">HTTP 200 OK • SSL ATIVO</span>
+      </div>
+      <img src="passo-8-deploy-success.png" alt="Deploy com Sucesso" class="rounded-xl border border-slate-200 shadow-md w-full max-w-3xl mx-auto">
+    </section>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+    JKL Solutions • Procedimentos Operacionais Padrão (POP) • 2026
+  </footer>
+
+</body>
+</html>
