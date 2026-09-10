@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oliveiracentroveterinario.com.br/sitemap.xml

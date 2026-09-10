@@ -1,0 +1,9 @@
+name = "oliveira-centro-veterinario"
+compatibility_date = "2024-09-23"
+
+routes = [
+  { pattern = "veterinaria.jklsolutions.com.br", custom_domain = true }
+]
+
+[assets]
+directory = "./preview-site"

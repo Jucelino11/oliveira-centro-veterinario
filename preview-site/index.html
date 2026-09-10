@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oliveira Centro Veterinário | Cuidado, Saúde e Amor para o Seu Pet em Mogi Guaçu</title>
+  <meta name="description" content="Centro Veterinário completo em Mogi Guaçu. Consultas, cirurgias, internação, exames e vacinação com a Dra. Jéssica Azevedo Oliveira. Agende pelo WhatsApp!">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            petGreen: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b'
+            },
+            petTeal: {
+              500: '#0d9488',
+              600: '#0f766e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(16, 185, 129, 0.15);
+    }
+    .hero-bg {
+      background: radial-gradient(circle at 10% 20%, rgba(220, 252, 231, 0.8) 0%, rgba(240, 253, 244, 0.5) 90%);
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- TOPBAR DE CONTATO & HORÁRIOS -->
+  <div class="bg-petGreen-900 text-emerald-100 text-xs sm:text-sm py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span><i class="fa-solid fa-location-dot text-emerald-400 mr-1"></i> Rua Cornélio Pires, 251 - Parque Cidade Nova, Mogi Guaçu/SP</span>
+        <span class="hidden md:inline text-emerald-600">|</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-clock text-emerald-400 mr-1"></i> Seg a Sex: 08h às 18h | Sáb: 08h às 12h</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <a href="https://wa.me/551938916022?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20para%20meu%20pet." target="_blank" class="hover:text-white font-medium flex items-center gap-1">
+          <i class="fa-brands fa-whatsapp text-emerald-400"></i> (19) 3891-6022
+        </a>
+        <span class="text-emerald-700">|</span>
+        <a href="https://www.instagram.com/oliveiracentroveterinario/" target="_blank" class="hover:text-white text-base"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://web.facebook.com/oliparcentroveterinario/" target="_blank" class="hover:text-white text-base"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR PRINCIPAL -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- LOGO -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
+          <i class="fa-solid fa-paw text-2xl"></i>
+        </div>
+        <div>
+          <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-800 block leading-tight">
+            Oliveira <span class="text-emerald-600">Centro Veterinário</span>
+          </span>
+          <span class="text-xs text-slate-500 font-medium tracking-wide uppercase">Cuidado & Medicina Veterinária • Mogi Guaçu</span>
+        </div>
+      </a>
+
+      <!-- MENU DESKTOP -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+        <a href="#sobre" class="hover:text-emerald-600 transition-colors">Sobre Nós</a>
+        <a href="#servicos" class="hover:text-emerald-600 transition-colors">Serviços</a>
+        <a href="#diferenciais" class="hover:text-emerald-600 transition-colors">Estrutura</a>
+        <a href="#depoimentos" class="hover:text-emerald-600 transition-colors">Depoimentos</a>
+        <a href="#localizacao" class="hover:text-emerald-600 transition-colors">Localização</a>
+      </nav>
+
+      <!-- CTA WHATSAPP -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/551938916022?text=Ol%C3%A1%2C%20preciso%20agendar%20uma%20consulta%20para%20meu%20pet." target="_blank"
+           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-600/30 transition-all hover:scale-105 active:scale-95">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Agendar Consulta</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-bg relative overflow-hidden py-16 lg:py-24 border-b border-emerald-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- TEXTO PRINCIPAL -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/90 text-emerald-800 text-xs sm:text-sm font-bold tracking-wide border border-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Atendimento Acolhedor & Alta Precisão Técnica
+          </div>
+          
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            A saúde e o bem-estar do seu melhor amigo em <span class="text-emerald-600 underline decoration-emerald-300 underline-offset-8">primeiro lugar.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            No <strong>Oliveira Centro Veterinário</strong>, unimos medicina veterinária humanizada, diagnóstico preciso e tecnologia para cuidar do seu pet como parte da família. Sob a responsabilidade da <strong>Dra. Jéssica Azevedo Oliveira</strong>.
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20com%20a%20Dra.%20J%C3%A9ssica." target="_blank"
+               class="flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-emerald-600/30 transition-all hover:-translate-y-0.5">
+              <i class="fa-brands fa-whatsapp text-2xl text-emerald-200"></i>
+              <span>Falar com Nossa Equipe</span>
+            </a>
+            <a href="#servicos" 
+               class="flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-bold text-base px-6 py-4 rounded-xl border border-slate-200 shadow-sm transition-all">
+              <span>Conhecer Serviços</span>
+              <i class="fa-solid fa-arrow-down text-sm text-slate-400"></i>
+            </a>
+          </div>
+
+          <!-- PONTOS RÁPIDOS -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-emerald-200/60 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <div class="text-2xl font-black text-emerald-700">100%</div>
+              <div class="text-xs text-slate-600 font-medium">Dedicação e Acolhimento</div>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-emerald-700">Centro</div>
+              <div class="text-xs text-slate-600 font-medium">Cirúrgico Completo</div>
+            </div>
+            <div>
+              <div class="text-2xl font-black text-emerald-700">Mogi Guaçu</div>
+              <div class="text-xs text-slate-600 font-medium">Fácil Acesso c/ Estac.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGEM HERO / CARD EM DESTAQUE -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md">
+            <!-- Moldura Decorativa -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-emerald-500/20 to-teal-400/20 rounded-3xl blur-xl"></div>
+            
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+              <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?q=80&w=800&auto=format&fit=crop" 
+                   alt="Veterinária cuidando com carinho de um cãozinho" 
+                   class="w-full h-96 object-cover hover:scale-105 transition-transform duration-500">
+              
+              <div class="p-5 bg-white border-t border-slate-100">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold shrink-0">
+                    <i class="fa-solid fa-user-doctor text-xl"></i>
+                  </div>
+                  <div>
+                    <h2 class="font-bold text-slate-800 text-base leading-tight">Dra. Jéssica Azevedo Oliveira</h2>
+                    <p class="text-xs text-slate-500 font-medium">Médica Veterinária • Responsável Técnica</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BADGE FLUTUANTE REPOSICIONADO NO TOPO DIREITO (SEM SOBREPOSIÇÃO DE TEXTO) -->
+            <div class="absolute -top-4 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-xl border border-emerald-100 flex items-center gap-3 z-10">
+              <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <div>
+                <div class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Atendimento Humanizado</div>
+                <div class="text-xs sm:text-sm font-extrabold text-slate-800">Cães, Gatos & Cuidado Total</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS EM DESTAQUE -->
+  <section id="servicos" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+          Especialidades & Cuidados
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Tudo o que o seu pet precisa em um só lugar
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Do preventivo às cirurgias avançadas, contamos com estrutura moderna e protocolos rigorosos de biossegurança para a tranquilidade da sua família.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: CONSULTAS -->
+        <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-emerald-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">Consultas Clínicas</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Avaliação detalhada, escuta atenta aos tutores, diagnóstico individualizado e orientação nutricional e preventiva.
+          </p>
+          <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Gostaria%20de%20marcar%20uma%20consulta%20cl%C3%ADnica." target="_blank" class="text-emerald-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Agendar Consulta <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- CARD 2: CIRURGIAS -->
+        <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-teal-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-syringe"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">Cirurgias & Castração</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Centro cirúrgico equipado, monitoramento anestésico rigoroso e acompanhamento pós-operatório dedicado para máxima segurança.
+          </p>
+          <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20cirurgias%20e%20castra%C3%A7%C3%A3o." target="_blank" class="text-emerald-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Saber Mais <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- CARD 3: INTERNAÇÃO -->
+        <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-cyan-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-cyan-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-bed-pulse"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">Internação Monitorada</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Espaço confortável e individualizado para recuperação com monitoramento constante de sinais vitais e medicação.
+          </p>
+          <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20o%20servi%C3%A7o%20de%20interna%C3%A7%C3%A3o." target="_blank" class="text-emerald-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Falar com a Equipe <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- CARD 4: EXAMES LABORATORIAIS -->
+        <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-indigo-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">Exames Clínicos & Imagem</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Exames de sangue, bioquímicos, ultrassonografia e radiografia para diagnósticos rápidos e assertivos.
+          </p>
+          <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Preciso%20de%20informa%C3%A7%C3%B5es%20sobre%20exames." target="_blank" class="text-emerald-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Consultar Exames <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- CARD 5: VACINAÇÃO & PREVENÇÃO -->
+        <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-700 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-emerald-700/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">Vacinação Importada & Prevenção</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Protocolos vacinais completos (V8/V10, Antirrábica, Gripe, Giárdia) e controle antiparasitário de excelência.
+          </p>
+          <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Gostaria%20de%20atualizar%20as%20vacinas%20do%20meu%20pet." target="_blank" class="text-emerald-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Atualizar Carteirinha <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- CARD 6: PLANOS DE SAÚDE CREDENCIADOS -->
+        <div class="group p-8 rounded-2xl bg-slate-50 hover:bg-emerald-50/50 border border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-amber-500/30 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-id-card-clip"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">Rede Credenciada de Convênios</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Atendimento facilitado através dos principais planos de saúde pet da região (Petlove, Porto Seguro, entre outros).
+          </p>
+          <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Gostaria%20de%20saber%20quais%20planos%20de%20sa%C3%BAde%20pet%20voc%C3%AAs%20aceitam." target="_blank" class="text-emerald-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Consultar Convênios <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE & RESPONSÁVEL TÉCNICA -->
+  <section id="sobre" class="py-20 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop" 
+                   alt="Dra Jessica e paciente no consultório veterinário" 
+                   class="w-full h-[450px] object-cover">
+            </div>
+            <div class="absolute -bottom-5 right-5 bg-emerald-700 text-white px-6 py-3 rounded-2xl shadow-xl font-bold text-sm">
+              <i class="fa-solid fa-check-circle text-emerald-300 mr-2"></i>CRM-SP Ativo
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+            Quem Somos
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+            Compromisso ético, carinho genuíno e paixão por salvar vidas.
+          </h2>
+          <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
+            Localizado no <strong>Parque Cidade Nova em Mogi Guaçu</strong>, o <strong>Oliveira Centro Veterinário</strong> nasceu com a missão de oferecer uma medicina veterinária acessível, transparente e de altíssimo padrão técnico.
+          </p>
+          <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+            Liderado pela <strong>Dra. Jéssica Azevedo Oliveira</strong>, nossa clínica foi estruturada para que seu cão ou gato sinta o mínimo de estresse possível, desde a recepção até os procedimentos clínicos e cirúrgicos.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-800 text-sm">Atendimento Humanizado</h4>
+                <p class="text-xs text-slate-500">Respeito ao tempo e temperamento de cada animal.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-800 text-sm">Segurança Cirúrgica</h4>
+                <p class="text-xs text-slate-500">Protocolos anestésicos modernos e exames prévios.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="https://wa.me/551938916022?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20cl%C3%ADnica!" target="_blank"
+               class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+              <span>Conversar com a Dra. Jéssica</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS REAIS DE TUTORES -->
+  <section id="depoimentos" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+          Reputação Comprovada
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          O que dizem os tutores que confiam na nossa equipe
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Avaliações reais e auditadas de tutores que confiam a saúde dos seus pets aos nossos cuidados.
+        </p>
+
+        <!-- BADGE COM MÉTRICAS REAIS DA CLÍNICA -->
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+          <div class="inline-flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200">
+            <span class="text-xl font-black text-emerald-700">4.9</span>
+            <div class="flex text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-xs text-slate-600 font-medium">(188 avaliações)</span>
+          </div>
+
+          <div class="inline-flex items-center gap-2 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200">
+            <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+            <span class="text-xs font-bold text-slate-800">98,4% dos tutores recomendam</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- DEPOIMENTO REAL 1 -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
+                <i class="fa-solid fa-shield-cat mr-1"></i>Avaliação Verificada
+              </span>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "Clínica maravilhosa! Pessoal nota 1000, atendimento super atencioso, educado e com muito carinho e paciência no cuidado com os nossos animais. Recomendo muito!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-10 h-10 rounded-full bg-emerald-200 text-emerald-800 font-bold flex items-center justify-center">T</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm">Tutor Verificado</div>
+              <div class="text-xs text-slate-500">Mogi Guaçu / SP • Consulta & Acompanhamento</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO REAL 2 -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
+                <i class="fa-solid fa-shield-cat mr-1"></i>Avaliação Verificada
+              </span>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "Profissionais muito capacitados e acolhedores. Têm muita paciência mesmo com animais agitados e filhotes assustados. Transmitem segurança e tranquilidade desde a recepção até o consultório."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-10 h-10 rounded-full bg-teal-200 text-teal-800 font-bold flex items-center justify-center">T</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm">Tutor Verificado</div>
+              <div class="text-xs text-slate-500">Mogi Guaçu / SP • Procedimento & Cuidados</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO REAL 3 -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm relative flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
+                <i class="fa-solid fa-shield-cat mr-1"></i>Avaliação Verificada
+              </span>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+              "Estrutura impecável, espaço muito limpo e organizado no Parque Cidade Nova. A Dra. Jéssica explica cada detalhe com muita clareza e dedicação. A melhor experiência veterinária da cidade."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-10 h-10 rounded-full bg-cyan-200 text-cyan-800 font-bold flex items-center justify-center">T</div>
+            <div>
+              <div class="font-bold text-slate-800 text-sm">Tutor Verificado</div>
+              <div class="text-xs text-slate-500">Mogi Guaçu / SP • Rotina & Vacinação</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO & HORÁRIOS -->
+  <section id="localizacao" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-3.5 py-1.5 rounded-full border border-emerald-800">
+            Fácil Acesso
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Venha nos visitar em Mogi Guaçu
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Estamos estrategicamente localizados no Parque Cidade Nova, com estacionamento facilitado e ambiente climatizado para o conforto do seu pet.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                <i class="fa-solid fa-location-dot text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Endereço</h4>
+                <p class="text-slate-300 text-sm">Rua Cornélio Pires, 251 - Parque Cidade Nova</p>
+                <p class="text-slate-400 text-xs">Mogi Guaçu - SP • CEP: 13845-411</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                <i class="fa-solid fa-phone text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Telefone & WhatsApp</h4>
+                <p class="text-slate-300 text-sm">(19) 3891-6022</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0 mt-1">
+                <i class="fa-solid fa-clock text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Horário de Funcionamento</h4>
+                <p class="text-slate-300 text-sm">Segunda a Sexta: 08:00 às 18:00</p>
+                <p class="text-slate-400 text-xs">Sábados: 08:00 às 12:00</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="https://maps.google.com/?q=Rua+Cornelio+Pires+251+Mogi+Guacu" target="_blank"
+               class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-600/30">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span>Abrir Rota no Google Maps</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl overflow-hidden border-2 border-slate-700 shadow-2xl h-[420px] bg-slate-800 relative">
+            <iframe 
+              src="https://maps.google.com/maps?q=Rua+Corn%C3%A9lio+Pires,+251,+Parque+Cidade+Nova,+Mogi+Gua%C3%A7u+-+SP&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              class="w-full h-full border-0" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-16 bg-gradient-to-r from-emerald-700 to-teal-700 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-black tracking-tight">
+        Seu pet merece o cuidado e a dedicação que só quem ama animais pode oferecer.
+      </h2>
+      <p class="text-emerald-100 text-base sm:text-lg max-w-2xl mx-auto">
+        Não espere sintomas se agravarem. Agende hoje mesmo uma avaliação preventiva com a Dra. Jéssica.
+      </p>
+      <div class="pt-2">
+        <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20o%20meu%20pet." target="_blank"
+           class="inline-flex items-center gap-3 bg-white text-emerald-800 hover:bg-emerald-50 font-extrabold text-base px-9 py-4 rounded-xl shadow-2xl transition-all hover:scale-105 active:scale-95">
+          <i class="fa-brands fa-whatsapp text-2xl text-emerald-600"></i>
+          <span>Agendar Atendimento pelo WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER COM CRÉDITO JKLSOLUTIONS -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-10 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
+          <i class="fa-solid fa-paw text-base"></i>
+        </div>
+        <div>
+          <span class="font-bold text-white text-sm">Oliveira Centro Veterinário</span>
+          <p class="text-slate-500">CNPJ: 49.839.084/0001-40 • Mogi Guaçu/SP</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 text-base">
+        <a href="https://www.instagram.com/oliveiracentroveterinario/" target="_blank" class="hover:text-emerald-400"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://web.facebook.com/oliparcentroveterinario/" target="_blank" class="hover:text-emerald-400"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://wa.me/551938916022" target="_blank" class="hover:text-emerald-400"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <div class="text-center md:text-right">
+        <p>© 2026 Oliveira Centro Veterinário. Todos os direitos reservados.</p>
+        <p class="mt-1 text-slate-500">
+          Desenvolvido e mantido com carinho por <strong class="text-emerald-400 font-semibold">JKLSolutions</strong>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/551938916022?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20meu%20pet." 
+     target="_blank" 
+     class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl shadow-emerald-600/50 transition-all hover:scale-110 active:scale-95"
+     title="Conversar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
