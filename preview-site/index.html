@@ -16,6 +16,68 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assinatura-rodape.css">
+  <style>
+    /* Estilos Críticos da Assinatura JKL */
+    .credito-jkl {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      text-decoration: none !important;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+      opacity: 0.75;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .credito-jkl:hover {
+      opacity: 1 !important;
+      transform: translateY(-1px);
+    }
+    .credito-jkl .jkl-logo-svg {
+      display: block !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.3s ease;
+    }
+    .credito-jkl:hover .jkl-logo-svg {
+      transform: scale(1.08);
+    }
+    .credito-jkl .jkl-part-j,
+    .credito-jkl .jkl-part-k-stem,
+    .credito-jkl .jkl-part-k-arm,
+    .credito-jkl .jkl-part-l-fuse,
+    .credito-jkl .jkl-part-dot,
+    .credito-jkl .jkl-sol {
+      transition: all 0.3s ease !important;
+    }
+    /* Repouso Suave */
+    .credito-jkl .jkl-sol {
+      color: #7b889b;
+      line-height: 1;
+    }
+    /* Hover Luminoso (Print 2) */
+    .credito-jkl:hover .jkl-part-j {
+      stroke: #ffffff !important;
+      filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+    }
+    .credito-jkl:hover .jkl-part-k-stem {
+      stroke: #ffffff !important;
+      filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+    }
+    .credito-jkl:hover .jkl-part-k-arm {
+      stroke: #ff7a00 !important;
+      filter: drop-shadow(0 0 4px rgba(255, 122, 0, 0.9));
+    }
+    .credito-jkl:hover .jkl-part-l-fuse {
+      stroke: #ff7a00 !important;
+      filter: drop-shadow(0 0 4px rgba(255, 122, 0, 0.9));
+    }
+    .credito-jkl:hover .jkl-part-dot {
+      fill: #ff7a00 !important;
+      filter: drop-shadow(0 0 5px rgba(255, 122, 0, 0.9));
+    }
+    .credito-jkl:hover .jkl-sol {
+      color: #ff7a00 !important;
+      text-shadow: 0 0 8px rgba(255, 122, 0, 0.6);
+    }
+  </style>
   
   <script>
     tailwind.config = {
@@ -639,17 +701,17 @@
           <h3 class="font-subbrand font-bold text-emerald-400 uppercase tracking-[0.2em] text-xs mb-4">
             Desenvolvido por
           </h3>
-          <a href="https://jklsolutions.com.br" target="_blank" rel="noopener" class="credito-jkl" title="Desenvolvido por JKLSolutions — Automação, TI e Engenharia">
-            <!-- Monograma Anatômico J+K+L Vetorial -->
-            <svg class="jkl-logo-svg" viewBox="0 0 80 80" width="30" height="30" fill="none">
-              <line class="jkl-part-j" x1="30" y1="42" x2="46" y2="42" stroke-width="3" stroke-linecap="round"/>
-              <path class="jkl-part-j" d="M 30 22 L 30 52 Q 30 62 20 62 Q 14 62 14 56" stroke-width="5.5" stroke-linecap="round"/>
-              <path class="jkl-part-k-stem" d="M 46 22 L 46 62" stroke-width="5.5" stroke-linecap="round"/>
-              <path class="jkl-part-k-arm" d="M 46 42 L 64 22" stroke-width="5.5" stroke-linecap="round"/>
-              <circle class="jkl-part-dot" cx="64" cy="22" r="4.5"/>
-              <path class="jkl-part-l-fuse" d="M 46 42 L 64 62" stroke-width="5.5" stroke-linecap="round"/>
+          <a href="https://jklsolutions.com.br" target="_blank" rel="noopener" class="credito-jkl group flex items-center justify-center gap-2.5 transition-all" title="Desenvolvido por JKLSolutions — Automação, TI e Engenharia">
+            <!-- Monograma Anatômico J+K Vetorial -->
+            <svg class="jkl-logo-svg shrink-0" viewBox="0 0 80 80" width="28" height="28" fill="none">
+              <line class="jkl-part-j" x1="30" y1="42" x2="46" y2="42" stroke="#887c4a" stroke-width="3" stroke-linecap="round"/>
+              <path class="jkl-part-j" d="M 30 22 L 30 52 Q 30 62 20 62 Q 14 62 14 56" stroke="#887c4a" stroke-width="5.5" stroke-linecap="round"/>
+              <path class="jkl-part-k-stem" d="M 46 22 L 46 62" stroke="#a89f91" stroke-width="5.5" stroke-linecap="round"/>
+              <path class="jkl-part-k-arm" d="M 46 42 L 64 22" stroke="#b36829" stroke-width="5.5" stroke-linecap="round"/>
+              <circle class="jkl-part-dot" cx="64" cy="22" r="4.5" fill="#b36829"/>
+              <path class="jkl-part-l-fuse" d="M 46 42 L 64 62" stroke="#b36829" stroke-width="5.5" stroke-linecap="round"/>
             </svg>
-            <span class="jkl-sol">Solutions</span>
+            <span class="jkl-sol text-lg tracking-wide font-medium">Solutions</span>
           </a>
         </div>
       </div>
