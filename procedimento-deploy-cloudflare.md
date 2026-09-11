@@ -8,8 +8,31 @@
 
 ### Etapa 1: Preparação dos Arquivos Locais & Repositório no GitHub
 1. Ter na pasta do projeto os arquivos essenciais:
-   - `preview-site/` (pasta com `index.html`, `404.html`, `robots.txt`, `sitemap.xml`)
+   - `preview-site/` (pasta com `index.html`, `404.html`, `robots.txt`, `_headers`)
    - `wrangler.json` e `wrangler.toml` (apontando para a rota custom domain `nomedocliente.jklsolutions.com.br`)
+
+---
+
+### 🛡️ REGRA CRÍTICA DE SEO: Bloqueio Total de Indexação no Ambiente de Teste
+> **Problema evitado:** Impedir que o Google indexe o endereço provisório (`cliente.jklsolutions.com.br`), gerando conflito de SEO e canibalização quando o domínio definitivo do cliente entrar no ar.
+
+No ambiente de teste, **SEMPRE** aplicar a blindagem tripla:
+1. **No `<head>` de todas as páginas:**
+   ```html
+   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+   <meta name="googlebot" content="noindex, nofollow">
+   ```
+2. **No arquivo `robots.txt`:**
+   ```txt
+   User-agent: *
+   Disallow: /
+   ```
+3. **No arquivo `_headers` da Cloudflare:**
+   ```
+   /*
+     X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+   ```
+*(Assim que o domínio definitivo for aprovado e lançado, remove-se o `noindex` e libera-se o `Allow: /` no domínio oficial).*
 2. Criar e subir no GitHub oficial `Jucelino11`:
    ```bash
    git init

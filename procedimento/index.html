@@ -55,6 +55,22 @@
       <p class="text-sm text-slate-600 leading-relaxed">
         Antes de abrir a Cloudflare, a estrutura do site do cliente é versionada e enviada para a conta GitHub oficial <code class="font-mono bg-slate-100 px-2 py-0.5 rounded font-bold text-slate-800">Jucelino11</code>.
       </p>
+
+      <!-- REGRA DE OURO SEO ANTI-INDEXAÇÃO -->
+      <div class="bg-rose-50 border border-rose-200 p-5 rounded-xl space-y-2 text-rose-950">
+        <div class="flex items-center gap-2 font-black text-rose-800 text-sm uppercase tracking-wider">
+          <i class="fa-solid fa-shield-halved text-base"></i> Regra Obrigatória: Bloqueio Total do Googlebot no Teste
+        </div>
+        <p class="text-xs leading-relaxed">
+          Para evitar o erro que ocorreu na Barbearia (onde o Google indexou o link temporário e demorou para reconhecer o oficial), todo site de homologação <strong>deve conter a blindagem tripla</strong>:
+        </p>
+        <ul class="list-disc pl-5 text-xs space-y-1 font-mono">
+          <li><strong>Tag HTML:</strong> &lt;meta name="robots" content="noindex, nofollow, noarchive"&gt;</li>
+          <li><strong>robots.txt:</strong> User-agent: * / Disallow: /</li>
+          <li><strong>_headers Cloudflare:</strong> X-Robots-Tag: noindex, nofollow</li>
+        </ul>
+      </div>
+
       <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono overflow-x-auto space-y-1">
         <p class="text-slate-400"># Na pasta do projeto:</p>
         <p>git init</p>
