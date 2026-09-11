@@ -126,6 +126,14 @@ console.log(
    }
    ```
 
+### Conexão Automática GitHub ➔ Cloudflare (Regra Anti-Desconexão):
+1. **Autorização da Organização/Conta GitHub:**
+   * No GitHub (`Settings ➔ Applications ➔ Cloudflare Workers and Pages`), em **Repository access**, selecionar **All repositories** (ou autorizar explicitamente o repositório do cliente).
+   * Sem essa autorização, a Cloudflare exibe o erro: *"This project is disconnected from your Git account"*, travando os deploys automáticos em modo "Manually deployed".
+2. **Conferência da Conexão no Painel Cloudflare:**
+   * Em **Workers & Pages ➔ [Nome do Projeto] ➔ Settings ➔ Builds**, verificar se o card de Git repository exibe o repositório sem avisos de desconexão.
+   * Quando conectado corretamente, cada `git push origin main` dispara o build e publica os novos arquivos em menos de 30 segundos.
+
 ### Virada de Chave para Produção (Go-Live):
 1. Cadastrar os Custom Domains na Cloudflare:
    * `dominiocliente.com.br`
