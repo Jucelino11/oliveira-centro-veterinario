@@ -127,12 +127,33 @@ console.log(
    ```
 
 ### Conexão Automática GitHub ➔ Cloudflare (Regra Anti-Desconexão):
-1. **Autorização da Organização/Conta GitHub:**
-   * No GitHub (`Settings ➔ Applications ➔ Cloudflare Workers and Pages`), em **Repository access**, selecionar **All repositories** (ou autorizar explicitamente o repositório do cliente).
-   * Sem essa autorização, a Cloudflare exibe o erro: *"This project is disconnected from your Git account"*, travando os deploys automáticos em modo "Manually deployed".
-2. **Conferência da Conexão no Painel Cloudflare:**
-   * Em **Workers & Pages ➔ [Nome do Projeto] ➔ Settings ➔ Builds**, verificar se o card de Git repository exibe o repositório sem avisos de desconexão.
-   * Quando conectado corretamente, cada `git push origin main` dispara o build e publica os novos arquivos em menos de 30 segundos.
+
+Para que o deploy seja **100% automático** (deu `git push`, subiu sozinho para o ar), a Cloudflare precisa estar autorizada no GitHub com permissão sobre o repositório.
+
+#### Passo 1: Autorizar o Repositório no GitHub App da Cloudflare
+1. No **GitHub**, clique na sua **foto de perfil** (canto superior direito) ➔ **Settings**.
+2. No menu lateral esquerdo, vá em **Applications** (ou acesse direto `https://github.com/settings/installations`).
+3. Clique em **Cloudflare Workers and Pages** (em *Installed GitHub Apps*).
+4. Role a página até a seção **Repository access**:
+   * **Recomendado:** Selecione **All repositories** *(assim todos os novos sites de clientes criados no futuro já nascem conectados e automáticos)*.
+   * **Alternativa:** Selecione *Only select repositories*, clique no campo de busca e adicione o repositório do cliente (ex: `oliveira-centro-veterinario`).
+5. Clique no botão verde: **Save**.
+
+#### Passo 2: Conferência da Conexão no Painel da Cloudflare
+1. Acesse: **[dash.cloudflare.com](https://dash.cloudflare.com)** ➔ **Compute** ➔ **Workers & Pages**.
+2. Clique no projeto do cliente ➔ aba **Settings** ➔ menu lateral **Builds**.
+3. No bloco **Git repository**, certifique-se de que:
+   * O nome do repositório aparece ativo (ex: `Jucelino11/oliveira-centro-veterinario`).
+   * **NÃO** deve existir o aviso azul: *"This project is disconnected from your Git account"*.
+   * Caso o aviso apareça, basta clicar no botão **`Manage`** e autorizar.
+
+#### Passo 3: Verificação Real de Deploy Automático
+1. Realize qualquer commit no repositório local e envie:
+   ```bash
+   git push origin main
+   ```
+2. Na Cloudflare (aba **Deployments**), o build deve iniciar sozinho exibindo o título do commit (sem exibir *"Manually deployed"*).
+3. Faça a **Verificação Real** na URL pública do site testando via HTTP antes de confirmar a entrega ao cliente.
 
 ### Virada de Chave para Produção (Go-Live):
 1. Cadastrar os Custom Domains na Cloudflare:
